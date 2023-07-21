@@ -20,9 +20,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        display.layer.cornerRadius = 20
+        display.layer.masksToBounds = true
+   
     }
     //    숫자 라벨
     @IBOutlet weak var display: UILabel!
+    
     
     var userIsInTheMiddleOfTyping = false
     //    숫자 버튼
@@ -124,7 +128,7 @@ class ViewController: UIViewController {
             
             isDiv = true
             display.text = "0"
+            
         }
     }
 }
-
