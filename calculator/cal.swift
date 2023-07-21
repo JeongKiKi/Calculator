@@ -7,7 +7,6 @@
 //
 
 class Calculator {
-    //    var cal = ViewController()
     var add = AddOperation()
     var sub = SubtractOperation()
     var mul = MultiplyOperation()
@@ -19,17 +18,12 @@ class Calculator {
         print(operatorSymbol)
         switch operatorSymbol {
         case "+": print(fn, secondNumber)
-            
             return add.calculate(firstNumber: fn, secondNumber: secondNumber)
-            
         case "-":
-            
             return sub.calculate(firstNumber: fn, secondNumber: secondNumber)
         case "*":
-            
             return mul.calculate(firstNumber: fn, secondNumber: secondNumber)
         case "/":
-            
             return div.calculate(firstNumber: fn, secondNumber: secondNumber)
         default:
             print("ERROR")

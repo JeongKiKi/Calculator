@@ -4,11 +4,11 @@
 //
 //  Created by 정기현 on 2023/07/19.
 //
-// test 추가
+// test 추가1
 import UIKit
 
 class ViewController: UIViewController {
-     var sum = Double();
+    var sum = Double();
     var num = Double();
     var isPlus = false;
     var isMinus = false;
@@ -16,13 +16,17 @@ class ViewController: UIViewController {
     var isDiv = false;
     var userTyping = false;
     var operatorSymbol: String?
-     var cal = Calculator()
+    var cal = Calculator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        display.layer.cornerRadius = 20
+        display.layer.masksToBounds = true
+   
     }
     //    숫자 라벨
     @IBOutlet weak var display: UILabel!
+    
     
     var userIsInTheMiddleOfTyping = false
     //    숫자 버튼
@@ -35,7 +39,6 @@ class ViewController: UIViewController {
         let dight = sender.currentTitle!
         print("thouched \(dight) dight");
         if userTyping {
-            
             let textCurrentDisplay = display.text!
             display.text = textCurrentDisplay + dight
         }else{
@@ -63,7 +66,7 @@ class ViewController: UIViewController {
         isMultiply = false
         isMinus = false
     }
- 
+    
     //    +버튼
     @IBAction func plus(_ sender: UIButton) {
         if(isPlus==false){
@@ -74,7 +77,7 @@ class ViewController: UIViewController {
             isDiv = false
             isMinus = false
             isMultiply = false
-
+            
             isPlus = true
             display.text = "0"
         }
@@ -125,41 +128,7 @@ class ViewController: UIViewController {
             
             isDiv = true
             display.text = "0"
+            
         }
     }
 }
-//calculator 클래스
-/*class Calculator {
-//    var cal = ViewController()
-     func calculate(firstNumber: Double?,operatorSymbol: String,  secondNumber: Double) -> Double? {
-        guard let fn = firstNumber else {
-            return nil
-        }
-        switch operatorSymbol {
-        case "+": print(fn, secondNumber)
-//            cal.isPlus = false
-//            cal.operatorSymbol = nil
-            return fn + secondNumber
-      
-        case "-":
-//            cal.isMinus = false
-//            cal.operatorSymbol = nil
-            return fn - secondNumber
-        case "*":
-//            cal.isMultiply = false
-//            cal.operatorSymbol = nil
-            return fn * secondNumber
-        case "/":
-//            cal.isDiv = false
-//            cal.operatorSymbol = nil
-            return fn / secondNumber
-        default:
-            print("ERROR")
-            return 0
-        }
-    }
-    
-    
-}*/
-
-
